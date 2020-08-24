@@ -3,4 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 axios
 youtube api
+semantic-ui
+grid
+
 
