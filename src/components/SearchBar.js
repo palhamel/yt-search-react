@@ -9,7 +9,9 @@ export class SearchBar extends React.Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.term);
+    // console.log('from searchbar:', this.state.term);
+
+    this.props.onFormSubmit(this.state.term)
 
     // TODO: make callback from parent component
   };
