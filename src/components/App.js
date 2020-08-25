@@ -1,3 +1,4 @@
+import "./app.css";
 import React from "react";
 import { SearchBar } from "./SearchBar";
 import youtube from "../api/youtube";
@@ -6,6 +7,10 @@ import { VideoDetail } from "./VideoDetail";
 
 export class App extends React.Component {
   state = { videos: [], selectedVideo: null };
+  // init app with a video:
+  componentDidMount() {
+    this.onTermSubmit("Cuddly Cows");
+  }
 
   onTermSubmit = async (term) => {
     // console.log('from app.js:', term)
@@ -16,7 +21,10 @@ export class App extends React.Component {
     });
     // console.log(response);
     // set state with response items array:
-    this.setState({ videos: response.data.items });
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0],
+    });
   };
 
   onVideoSelect = (video) => {
@@ -35,6 +43,7 @@ export class App extends React.Component {
               <VideoDetail video={this.state.selectedVideo} />
             </div>
             <div className="five wide column">
+              <p className="ui purple right ribbon label">Videos:</p>
               <VideoList
                 onVideoSelect={this.onVideoSelect}
                 videos={this.state.videos}

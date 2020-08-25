@@ -10,7 +10,9 @@ export const VideoItem = ({ video, onVideoSelect }) => {
         alt={video.snippet.title}
       />
       <div className="content">
-        <div className="header">{video.snippet.title}</div>
+        <div className="header">
+          <h5>{video.snippet.title}</h5>
+        </div>
       </div>
     </div>
   );
