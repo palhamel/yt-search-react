@@ -1,5 +1,6 @@
 
-## App for searching Youtube, display a list of videos and click to play.
+## App for searching Youtube and to display a list of videos.
+Desktop only.
 
 * Using Axios
 * googleapis.com
